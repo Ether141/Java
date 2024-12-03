@@ -6,10 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "rectangle")
 public class Rectangle extends Shape {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
-
     @Column
     private float a;
 

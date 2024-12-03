@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 @MappedSuperclass
 public abstract class Shape {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "r", column = @Column(name = "red")),
@@ -33,6 +37,10 @@ public abstract class Shape {
     public abstract float getArea();
 
     public abstract float getPerimeter();
+
+    public Long getId() {
+        return id;
+    }
 
     public Color getColor() {
         return color;
